@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>SHERU CLUB — Money & Aura</title>
+<style>
+:root{--bg:#090909;--panel:#141414;--panel2:#1b1b1b;--gold:#e5b94f;--gold2:#f7df98;--muted:#aaa;--line:#303030;--white:#f5f2e9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#30230d 0,transparent 28%),var(--bg);color:var(--white);font:15px/1.5 Arial,Helvetica,sans-serif}
+button{cursor:pointer;font:inherit}.shell{max-width:1180px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0 20px;gap:15px}.brand{font-weight:900;letter-spacing:2px;font-size:23px}.brand span{color:var(--gold)}.tag{color:var(--muted);font-size:11px;letter-spacing:2px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{color:#ddd;text-decoration:none;padding:9px 12px;border-radius:9px;font-size:13px}.nav a:hover{background:#292318;color:var(--gold2)}.hero{padding:48px 0 28px;display:grid;grid-template-columns:1.4fr .8fr;gap:22px;align-items:center}.eyebrow{color:var(--gold);letter-spacing:3px;font-size:11px;font-weight:bold}.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.02;margin:12px 0}.hero h1 span{color:var(--gold)}.hero p{color:#bbb;max-width:590px}.btn{background:linear-gradient(135deg,var(--gold2),#c28b23);color:#17120a;border:0;border-radius:10px;padding:12px 18px;font-weight:800}.btn.secondary{background:#252525;color:var(--gold2);border:1px solid #5a4822}.hero-card,.card{background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 14px 40px #0005}.hero-card{border-color:#66501f}.crown{font-size:38px}.hero-card strong{display:block;color:var(--gold2);font-size:25px}.hero-card small,.muted{color:var(--muted)}.section{margin:24px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:13px}.section h2{font-size:20px;margin:0}.section-head small{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px}.stat b{display:block;color:var(--gold2);font-size:25px}.stat span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.activity{min-height:180px;display:flex;flex-direction:column;align-items:flex-start}.activity .emoji{font-size:27px}.activity h3{margin:8px 0 3px}.activity p{color:var(--muted);font-size:13px;margin:0 0 15px;flex:1}.activity button{margin-top:auto}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.list{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);gap:12px}.list:last-child{border:0}.pill{border:1px solid #6b5424;color:var(--gold2);border-radius:99px;padding:3px 9px;font-size:11px}.badge{display:inline-flex;align-items:center;gap:7px;background:#282113;border:1px solid #59471f;padding:9px 12px;border-radius:11px;margin:5px 5px 0 0;color:var(--gold2);font-size:12px}.coupon{background:linear-gradient(110deg,#241d10,#171717);border:1px dashed #8a6b2c;border-radius:12px;padding:15px;margin-top:10px}.footer{border-top:1px solid var(--line);padding:25px 0;margin-top:35px;color:var(--muted);font-size:12px}.notice{background:#211b0f;border:1px solid #5b4720;color:#e8d5a7;padding:12px 14px;border-radius:10px;font-size:12px;margin-top:15px}.modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{max-width:430px;width:100%;background:#171717;border:1px solid #725a27;border-radius:16px;padding:22px}.modalbox input{width:100%;padding:12px;margin:7px 0 14px;background:#0d0d0d;border:1px solid #444;border-radius:8px;color:white}.close{float:right;background:none;border:0;color:#aaa;font-size:22px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:30px}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}.shell{padding:15px}.top{align-items:flex-start;flex-direction:column}.nav a{padding:7px 9px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <div><div class="brand">♛ SHERU <span>CLUB</span></div><div class="tag">MONEY • MINDSET • AURA</div></div>
+  <nav class="nav"><a href="#dashboard">Dashboard</a><a href="#activities">Activities</a><a href="#leaderboard">Leaderboard</a><a href="#rewards">Rewards</a><a href="#profile">Profile</a></nav>
+  <button class="btn secondary" onclick="openLogin()">Sign in / Register</button>
+</header>
+<main>
+<section class="hero">
+ <div><div class="eyebrow">WELCOME TO THE CLUB</div><h1>Build your <span>mindset.</span><br>Earn your aura.</h1><p>Take on quick daily challenges, test your knowledge, collect points and unlock club badges. Your progress starts here.</p><a href="#activities"><button class="btn">Explore Activities →</button></a></div>
+ <div class="hero-card"><div class="crown">♛</div><div class="eyebrow">YOUR CLUB STATUS</div><strong id="heroPoints">0 POINTS</strong><small>Keep learning. Keep progressing.</small><div class="notice">Demo account: points are saved only in this browser on this device.</div></div>
+</section>
+<section id="dashboard" class="section"><div class="section-head"><h2>Dashboard Overview</h2><small>Your activity at a glance</small></div>
+ <div class="stats"><div class="stat"><b id="points">0</b><span>Total Points</span></div><div class="stat"><b id="level">1</b><span>Club Level</span></div><div class="stat"><b id="streak">0</b><span>Day Streak</span></div><div class="stat"><b id="badgeCount">0</b><span>Badges Earned</span></div></div>
+</section>
+<section id="activities" class="section"><div class="section-head"><h2>Daily Activities</h2><small>Complete activities to collect points</small></div>
+ <div class="grid">
+  <article class="card activity"><div class="emoji">📅</div><h3>Daily Check-in</h3><p>Visit the club and claim today's check-in points.</p><button class="btn" id="checkin" onclick="dailyCheckin()">Claim +10 Points</button></article>
+  <article class="card activity"><div class="emoji">🧠</div><h3>Money Quiz</h3><p>Answer a quick money-smart question. Correct answers earn points.</p><button class="btn secondary" onclick="showQuiz()">Start Quiz</button></article>
+  <article class="card activity"><div class="emoji">⚡</div><h3>Aura Challenge</h3><p>Choose one positive daily goal and mark it complete.</p><button class="btn secondary" onclick="challenge()">Complete Challenge +5</button></article>
+ </div>
+</section>
+<section class="two section">
+ <div class="card" id="leaderboard"><div class="section-head"><h2>Club Leaderboard</h2><span class="pill">Demo</span></div><div class="list"><span>🥇 Golden Mind</span><b>1,250 pts</b></div><div class="list"><span>🥈 Aura Master</span><b>980 pts</b></div><div class="list"><span>🥉 Money Learner</span><b>760 pts</b></div><div class="list"><span>⭐ You (this device)</span><b id="leaderPoints">0 pts</b></div><small class="muted">Sample names and scores. A real shared leaderboard needs a secure database.</small></div>
+ <div class="card" id="profile"><div class="section-head"><h2>Your Profile</h2><span class="pill">Guest Demo</span></div><div class="list"><span>Member name</span><b>Club Guest</b></div><div class="list"><span>Current level</span><b id="profileLevel">Level 1</b></div><div class="list"><span>Points balance</span><b id="profilePoints">0</b></div><h3>My Badges</h3><div id="badges"><span class="muted">Complete activities to earn your first badge.</span></div></div>
+</section>
+<section class="section" id="rewards"><div class="section-head"><h2>Rewards Store</h2><small>Illustrative rewards — not redeemable in this demo</small></div>
+ <div class="grid">
+  <div class="card"><div class="emoji">🏅</div><h3>Starter Badge</h3><p class="muted">A badge for joining the club.</p><span class="pill">Free</span></div>
+  <div class="card"><div class="emoji">🎟️</div><h3>Partner Coupon</h3><p class="muted">Coupons may be added when a sponsor provides them.</p><span class="pill">Coming soon</span></div>
+  <div class="card"><div class="emoji">🎁</div><h3>Club Gift</h3><p class="muted">Physical gifts only when funded and available.</p><span class="pill">Coming soon</span></div>
+ </div>
+ <div class="coupon"><b>Reward policy</b><br><small class="muted">Points currently have no cash value. No cash, recharge or gift is promised. Real rewards need a funded budget, clear rules and a way to verify eligible members.</small></div>
+</section>
+</main>
+<footer class="footer">© 2026 SHERU CLUB — Independent community concept. Not affiliated with any creator or brand. Use only content you own or have permission to publish.<br>This is a front-end demo. Sign-in, cloud sync, real coupons, payments and advertising are not connected.</footer>
+</div>
+<div class="modal" id="loginModal"><div class="modalbox"><button class="close" onclick="closeLogin()">×</button><h2>Welcome to SHERU CLUB</h2><p class="muted">Sign-in is a visual placeholder in this demo.</p><label>Email address</label><input type="email" placeholder="you@example.com" disabled><button class="btn" style="width:100%" disabled>Continue with Email (not connected)</button><p class="muted" style="text-align:center">or</p><button class="btn secondary" style="width:100%" disabled>Continue with Google (not connected)</button><div class="notice">Do not enter real passwords or personal information here. Real Google/email login requires secure authentication setup and appropriate adult supervision.</div></div></div>
+<script>
+const KEY='sheruClubDemoV1';
+let data={points:0,streak:0,lastCheckin:'',quizDone:'',challengeDone:'',badges:[]};
+try{data={...data,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){}
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function today(){return new Date().toLocaleDateString('en-CA')}
+function addBadge(name){if(!data.badges.includes(name))data.badges.push(name)}
+function render(){
+ const level=Math.floor(data.points/100)+1;
+ document.getElementById('points').textContent=data.points;
+ document.getElementById('heroPoints').textContent=data.points+' POINTS';
+ document.getElementById('level').textContent=level;
+ document.getElementById('profileLevel').textContent='Level '+level;
+ document.getElementById('profilePoints').textContent=data.points;
+ document.getElementById('streak').textContent=data.streak;
+ document.getElementById('badgeCount').textContent=data.badges.length;
+ document.getElementById('leaderPoints').textContent=data.points+' pts';
+ document.getElementById('badges').innerHTML=data.badges.length?data.badges.map(x=>'<span class="badge">♛ '+x+'</span>').join(''):'<span class="muted">Complete activities to earn your first badge.</span>';
+ const done=data.lastCheckin===today();document.getElementById('checkin').disabled=done;document.getElementById('checkin').textContent=done?'Checked in today ✓':'Claim +10 Points';
+}
+function dailyCheckin(){if(data.lastCheckin===today())return alert('You have already checked in today.');data.points+=10;data.streak+=1;data.lastCheckin=today();addBadge('First Check-in');save();alert('10 demo points added!')}
+function showQuiz(){if(data.quizDone===today())return alert('You have completed today’s quiz.');const answer=prompt('Money Quiz: What is a budget?\\nA) A plan for income and spending\\nB) Free money\\nC) A shopping list\\nType A, B or C:');if(answer===null)return;if(answer.trim().toUpperCase()==='A'){data.points+=15;data.quizDone=today();addBadge('Quiz Beginner');save();alert('Correct! +15 demo points.')}else alert('Not quite. A budget is a plan for income and spending. Try again.')}
+function challenge(){if(data.challengeDone===today())return alert('You have completed today’s challenge.');data.challengeDone=today();data.points+=5;addBadge('Action Taker');save();alert('Challenge completed! +5 demo points.')}
+function openLogin(){document.getElementById('loginModal').classList.add('show')}function closeLogin(){document.getElementById('loginModal').classList.remove('show')}
+render();
+</script>
+</body></html>
